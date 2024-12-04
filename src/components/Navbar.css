@@ -1,0 +1,104 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366; /* Dark blue */
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px 15px;
+  border: 1px solid #ccc; /* Soft border for a more subtle effect */
+  border-radius: 8px 0 0 8px; /* Rounded corners for a smooth, modern look */
+  width: 250px; /* Slightly smaller width for better balance */
+  font-size: 16px; /* Adjust font size for readability */
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Darker text color for contrast */
+  transition: all 0.3s ease; /* Smooth transition for focus and hover states */
+  margin-top: 1em;
+}
+
+.search-input:focus {
+  border-color: #00509e; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+  background-color: #ffffff; /* Change background color on focus */
+}
+
+.search-button {
+  padding: 10px 20px;
+  border: 1px solid #00509e; /* Subtle border to match the color scheme */
+  background-color: #00509e; /* Consistent button background */
+  color: white;
+  border-radius: 0 8px 8px 0; /* Rounded corners for smooth transition */
+  font-size: 16px; /* Consistent font size */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.search-button:hover {
+  background-color: #004080; /* Darker shade on hover */
+  border-color: #004080; /* Match border with background color */
+}
+
+.search-button:focus {
+  outline: none; /* Remove focus outline for clean design */
+}
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+}
+
+.icon-button:hover {
+  color: #aad8ff;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  color: #003366;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #003366;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}

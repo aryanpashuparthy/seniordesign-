@@ -1,0 +1,10 @@
+.home {
+    padding: 20px;
+  }
+  
+  .house-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
