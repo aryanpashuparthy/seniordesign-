@@ -1,9 +1,9 @@
 const houses = [
     {
       id: 1,
-      name: 'xury Villa in Erie',
+      name: 'Luxury Villa in Erie',
       rooms: 3,
-      price: 250000,
+      sharePrice: 250000,
       images: [
         '/images/image1.jpg',
         '/images/image2.avif',
@@ -17,7 +17,7 @@ const houses = [
       id: 2,
       name: 'Modern Apartment in Philadelphia',
       rooms: 2,
-      price: "Rath-5807,804.58",
+      sharePrice: "807,804.58",
       images: [
         '/images/image2.avif',
         '/images/image5.avif',
@@ -31,7 +31,7 @@ const houses = [
       id: 3,
       name: 'Luxury Villa',
       rooms: 5,
-      price: 750000,
+      sharePrice: 750000,
       images: [
         '/images/image4.avif',
         '/images/image5.avif',

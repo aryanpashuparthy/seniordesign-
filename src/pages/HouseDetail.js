@@ -1,11 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import houses from '../data/houses';
+import "bootstrap/dist/css/bootstrap.min.css";
 import './HouseDetail.css';
 
 function HouseDetail() {
   const { id } = useParams();
   const house = houses.find(h => h.id === parseInt(id));
+
+  const sharePrice = house.sharePrice/4312
 
   if (!house) {
     return <h2>House not found</h2>;
@@ -38,7 +41,7 @@ function HouseDetail() {
         <div className="left-part">
           <h2>{house.name}</h2>
           <p><strong>Rooms:</strong> {house.rooms}</p>
-          <p><strong>Price:</strong> ${house.price.toLocaleString()}</p>
+          <p><strong>Price:</strong> ${house.sharePrice.toLocaleString()}</p>
           <p><strong>Description:</strong> {house.description}</p>
         </div>
 
@@ -46,16 +49,17 @@ function HouseDetail() {
         <div className="right-part">
           <div className="price-card">
             <h3>Price</h3>
-            <div className="amount-section">
-              <p>${house.price.toLocaleString()}</p>
+            <div className="amount-section ">
+              <p>${house.sharePrice.toLocaleString()}</p>
+              <span>${sharePrice.toFixed(2)}/share</span>
             </div>
             <button className="invest-button mb2">
               <a href="/credit-card" className="invest-link">Invest</a>
             </button>
              {/* Bottom Boxes */}
           <div className="bottom-boxes">
-            <div className="box">{house.price.toLocaleString()}</div>
-            <div className="box">{house.price.toLocaleString()}</div>
+            <div className="box">{house.sharePrice.toLocaleString()}</div>
+            <div className="box">{house.sharePrice.toLocaleString()}</div>
           </div>
 
           {/* Progress Bar */}

@@ -7,6 +7,10 @@
   padding: 10px 20px;
 }
 
+.Navbar{
+  background-color: #004080; /* Darker shade on hover */
+}
+
 .navbar-logo {
   font-size: 24px;
   font-weight: bold;

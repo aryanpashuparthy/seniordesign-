@@ -72,11 +72,19 @@
   color: #00796b;
 }
 
-.amount-section p {
+.amount-section{
   font-size: 24px;
   font-weight: bold;
   color: #00796b;
-  margin-top: 10px;
+  padding: 0 px;
+}
+
+.amount-section p{
+  margin-bottom: 0px;
+}
+
+.amount-section span{
+  font-size: 18px;
 }
 
 .invest-button {

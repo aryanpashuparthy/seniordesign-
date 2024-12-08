@@ -11,6 +11,7 @@ function Home() {
       <div className="house-list">
         {houses.map(house => (
           <HouseCard key={house.id} house={house} />
+          // <HouseCard house={house} />
         ))}
       </div>
     </div>

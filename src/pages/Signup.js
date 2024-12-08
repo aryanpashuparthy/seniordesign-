@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
-import './Auth.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios"; 
+import "./Auth.css";
 
 function Signup() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
-    firstName: '',
-    lastName: '',
-    mobilePhone: '',
-    email: '',
-    password: '',
+    firstName: "",
+    lastName: "",
+    phone: "", 
+    email: "",
+    password: "",
   });
 
-  const handleChange = e => {
+  const [responseMessage, setResponseMessage] = useState("");
+
+  const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle signup logic here
-    console.log('Signup form submitted:', form);
+    try {
+      const response = await axios.post("http://localhost:5214/auth/register", form, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      console.log(response)
+      setResponseMessage(response.data.message || "Signup successful!");
+      console.log("Signup response:", response.data);
+
+      navigate("/login"); 
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || "Error submitting form.";
+      setResponseMessage(errorMessage);
+      console.error("Error during signup:", errorMessage);
+    }
   };
 
   return (
@@ -56,8 +76,8 @@ function Signup() {
             <label>+1 Mobile Phone</label>
             <input
               type="text"
-              name="mobilePhone"
-              value={form.mobilePhone}
+              name="phone"
+              value={form.phone}
               onChange={handleChange}
             />
           </div>
@@ -84,10 +104,17 @@ function Signup() {
             />
           </div>
 
-          <button type="submit" className="signup-btn">Sign Up</button>
+          <button type="submit" className="signup-btn">
+            Sign Up
+          </button>
         </form>
+        {responseMessage && (
+          <p className="response-message">{responseMessage}</p>
+        )}
         <div className="login-link">
-          <p>Already have an account? <a href="/login">Log in now.</a></p>
+          <p>
+            Already have an account? <a href="/login">Log in now.</a>
+          </p>
         </div>
       </div>
     </div>
